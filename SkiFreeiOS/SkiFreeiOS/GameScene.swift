@@ -26,7 +26,7 @@ class GameScene: SKScene {
         background2.size = frame.size
         
         background1.position = CGPoint(x: frame.width / 2, y: frame.height / 2 )
-        background2.position = CGPoint(x: frame.width / 2, y: -frame.height / 2)
+        background2.position = CGPoint(x: frame.width / 2, y: frame.height * 2 - frame.height/2)
         
         addChild(background1)
         addChild(background2)
@@ -49,16 +49,20 @@ class GameScene: SKScene {
     }
     
     func moveBackground(){
+        if (background1.position.y <= -background1.size.height / 2){
+            background1.position = CGPoint(x: frame.width / 2, y: frame.height * 2 - frame.height/2 - 4)
+        }
+        
+        print(background1.position.y)
+        if (background2.position.y <= -background1.size.height / 2){
+            background2.position = CGPoint(x: frame.width / 2, y: frame.height * 2 - frame.height/2 - 4)
+            
+        }
+        
         background1.position = CGPoint(x: background1.position.x, y: background1.position.y - 4)
         background2.position = CGPoint(x: background2.position.x, y: background2.position.y - 4)
         
-        if (background1.position.y < -background1.size.height){
-            background1.position = CGPoint(x: background1.position.x, y: background2.size.height + background2.position.y)
-        }
         
-        if (background2.position.y < -background2.size.height){
-            background2.position = CGPoint(x: background2.position.x, y: background1.size.height + background1.position.y)
-        }
 }
 
 }
