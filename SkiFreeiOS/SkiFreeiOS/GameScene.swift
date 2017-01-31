@@ -22,9 +22,11 @@ class GameScene: SKScene {
         //Background
         background1 = SKSpriteNode(imageNamed: "background1")
         background2 = SKSpriteNode(imageNamed: "background2")
+        background1.size = frame.size
+        background2.size = frame.size
         
-        background1.position = CGPoint(x: 0, y: 0 )
-        background2.position = CGPoint(x: 0, y: background1.size.height - 1)
+        background1.position = CGPoint(x: frame.width / 2, y: frame.height / 2 )
+        background2.position = CGPoint(x: frame.width / 2, y: -frame.height / 2)
         
         addChild(background1)
         addChild(background2)
