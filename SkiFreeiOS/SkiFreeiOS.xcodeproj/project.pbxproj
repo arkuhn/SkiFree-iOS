@@ -18,6 +18,7 @@
 		0DBFEFDC1E410D10003F6772 /* SkiFreeiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFEFDB1E410D10003F6772 /* SkiFreeiOSTests.swift */; };
 		0DBFEFE71E410D10003F6772 /* SkiFreeiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFEFE61E410D10003F6772 /* SkiFreeiOSUITests.swift */; };
 		0DBFEFF51E411EFA003F6772 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFEFF41E411EFA003F6772 /* MenuScene.swift */; };
+		0DBFEFF71E412B4B003F6772 /* Skier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFEFF61E412B4B003F6772 /* Skier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		0DBFEFE61E410D10003F6772 /* SkiFreeiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiFreeiOSUITests.swift; sourceTree = "<group>"; };
 		0DBFEFE81E410D10003F6772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DBFEFF41E411EFA003F6772 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		0DBFEFF61E412B4B003F6772 /* Skier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				0DBFEFC21E410D10003F6772 /* GameScene.sks */,
 				0DBFEFC41E410D10003F6772 /* Actions.sks */,
 				0DBFEFC61E410D10003F6772 /* GameScene.swift */,
+				0DBFEFF61E412B4B003F6772 /* Skier.swift */,
 				0DBFEFC81E410D10003F6772 /* GameViewController.swift */,
 				0DBFEFCA1E410D10003F6772 /* Main.storyboard */,
 				0DBFEFCD1E410D10003F6772 /* Assets.xcassets */,
@@ -279,6 +282,7 @@
 				0DBFEFC71E410D10003F6772 /* GameScene.swift in Sources */,
 				0DBFEFC91E410D10003F6772 /* GameViewController.swift in Sources */,
 				0DBFEFC11E410D10003F6772 /* AppDelegate.swift in Sources */,
+				0DBFEFF71E412B4B003F6772 /* Skier.swift in Sources */,
 				0DBFEFF51E411EFA003F6772 /* MenuScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
