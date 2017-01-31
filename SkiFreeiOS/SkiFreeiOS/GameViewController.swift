@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
         sceneView.showsNodeCount = true
         
         let scene = MenuScene(size: view.bounds.size)
-        scene.scaleMode = .aspectFit
+        scene.scaleMode = .resizeFill
         sceneView.presentScene(scene)
     }
 
