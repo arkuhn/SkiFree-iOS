@@ -17,6 +17,7 @@
 		0DBFEFD11E410D10003F6772 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DBFEFCF1E410D10003F6772 /* LaunchScreen.storyboard */; };
 		0DBFEFDC1E410D10003F6772 /* SkiFreeiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFEFDB1E410D10003F6772 /* SkiFreeiOSTests.swift */; };
 		0DBFEFE71E410D10003F6772 /* SkiFreeiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFEFE61E410D10003F6772 /* SkiFreeiOSUITests.swift */; };
+		0DBFEFF51E411EFA003F6772 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFEFF41E411EFA003F6772 /* MenuScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		0DBFEFE21E410D10003F6772 /* SkiFreeiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkiFreeiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DBFEFE61E410D10003F6772 /* SkiFreeiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiFreeiOSUITests.swift; sourceTree = "<group>"; };
 		0DBFEFE81E410D10003F6772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DBFEFF41E411EFA003F6772 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				0DBFEFCD1E410D10003F6772 /* Assets.xcassets */,
 				0DBFEFCF1E410D10003F6772 /* LaunchScreen.storyboard */,
 				0DBFEFD21E410D10003F6772 /* Info.plist */,
+				0DBFEFF41E411EFA003F6772 /* MenuScene.swift */,
 			);
 			path = SkiFreeiOS;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				0DBFEFC71E410D10003F6772 /* GameScene.swift in Sources */,
 				0DBFEFC91E410D10003F6772 /* GameViewController.swift in Sources */,
 				0DBFEFC11E410D10003F6772 /* AppDelegate.swift in Sources */,
+				0DBFEFF51E411EFA003F6772 /* MenuScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
