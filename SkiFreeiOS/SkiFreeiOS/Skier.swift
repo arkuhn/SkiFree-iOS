@@ -34,6 +34,8 @@ class Skier: SKSpriteNode{
         physicsBody = skierPhysics
     }
     
+     
+    
     func setPosition(){
         
     }
