@@ -25,13 +25,20 @@ class Skier: SKSpriteNode{
     
     func setPhysics(){
         //Skier physics
+        
         skierPhysics = SKPhysicsBody(rectangleOf: size)
         skierPhysics?.allowsRotation = false
         skierPhysics?.angularDamping = 0
+        skierPhysics?.affectedByGravity = false
         skierPhysics?.linearDamping = 0
         skierPhysics?.restitution = 0 //doesnt bounce :(
         skierPhysics?.friction = 0
         physicsBody = skierPhysics
+        
+    }
+    
+    func gravity(){
+        self.position = CGPoint(x: self.position.x, y: self.position.y - 10)
     }
     
      

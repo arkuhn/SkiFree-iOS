@@ -60,6 +60,8 @@ class GameScene: SKScene {
         self.moveBackground()
         self.distance += 1
         self.distanceNode.text = ("Distance: \(distance)")
+        skier.gravity()
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -69,12 +71,12 @@ class GameScene: SKScene {
             let node = self.atPoint(pos)
             
             if node == touchZone {
-                skier.skierPhysics?.applyImpulse(CGVector(dx: 0, dy: 75))
+                skier.skierPhysics?.applyForce(CGVector(dx: 0, dy: 500), at: skier.position)
             }
-            if(pos.x < frame.width / 2){
+            if(pos.x < frame.width / 3 ){
                 skier.moveHorizontal(direction: "left")
             }
-            if(pos.x > frame.width / 2){
+            if(pos.x > 2 * frame.width / 3){
                 skier.moveHorizontal(direction: "right")
             }
             
