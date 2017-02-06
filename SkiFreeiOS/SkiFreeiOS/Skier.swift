@@ -12,6 +12,7 @@ import SpriteKit
 
 class Skier: SKSpriteNode{
     
+    var skierPhysics: SKPhysicsBody?
     
     init () {
         super.init(texture: nil, color: UIColor.red, size: CGSize(width: 40, height: 40))
@@ -24,12 +25,17 @@ class Skier: SKSpriteNode{
     
     func setPhysics(){
         //Skier physics
-        physicsBody = SKPhysicsBody(rectangleOf: size)
-        physicsBody?.allowsRotation = false
-        physicsBody?.angularDamping = 0
-        physicsBody?.linearDamping = 0
-        physicsBody?.restitution = 0 //doesnt bounce :(
-        physicsBody?.friction = 0
+        skierPhysics = SKPhysicsBody(rectangleOf: size)
+        skierPhysics?.allowsRotation = false
+        skierPhysics?.angularDamping = 0
+        skierPhysics?.linearDamping = 0
+        skierPhysics?.restitution = 0 //doesnt bounce :(
+        skierPhysics?.friction = 0
+        physicsBody = skierPhysics
+    }
+    
+    func setPosition(){
+        
     }
     
 }
