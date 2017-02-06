@@ -49,18 +49,25 @@ class GameScene: SKScene {
     }
     
     func moveBackground(){
-        if (background1.position.y <= -background1.size.height / 2){
-            background1.position = CGPoint(x: frame.width / 2, y: frame.height * 2 - frame.height/2 - 4)
-        }
         
-        print(background1.position.y)
-        if (background2.position.y <= -background1.size.height / 2){
-            background2.position = CGPoint(x: frame.width / 2, y: frame.height * 2 - frame.height/2 - 4)
-            
+        if (background1.position.y <= -background1.size.height / 2){
+            background1.position = CGPoint(x: frame.width / 2, y: background2.position.y + frame.height)
+            return
         }
         
         background1.position = CGPoint(x: background1.position.x, y: background1.position.y - 4)
-        background2.position = CGPoint(x: background2.position.x, y: background2.position.y - 4)
+        
+        
+        if (background2.position.y <= -background1.size.height / 2){
+            background2.position = CGPoint(x: frame.width / 2, y: background1.position.y + frame.height)
+            return
+            
+        }
+        
+        background2.position = CGPoint(x: background1.position.x, y: background2.position.y - 4)
+
+        
+        //background2.position = CGPoint(x: background2.position.x, y: background2.position.y)
         
         
 }
