@@ -36,8 +36,20 @@ class Skier: SKSpriteNode{
     
      
     
-    func setPosition(){
+    func moveHorizontal(direction: String){
         
+        switch direction{
+            
+        case "left":
+            self.skierPhysics?.applyForce(CGVector(dx: -70, dy: 0), at: self.position)
+            break
+        case "right":
+            self.skierPhysics?.applyForce(CGVector(dx: 70, dy: 0), at: self.position)
+            break
+        default:
+            break
+        }
+    
     }
     
 }

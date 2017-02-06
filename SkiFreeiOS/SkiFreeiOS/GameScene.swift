@@ -71,6 +71,12 @@ class GameScene: SKScene {
             if node == touchZone {
                 skier.skierPhysics?.applyImpulse(CGVector(dx: 0, dy: 75))
             }
+            if(pos.x < frame.width / 2){
+                skier.moveHorizontal(direction: "left")
+            }
+            if(pos.x > frame.width / 2){
+                skier.moveHorizontal(direction: "right")
+            }
             
         }
     }
