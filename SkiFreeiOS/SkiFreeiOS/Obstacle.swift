@@ -2,7 +2,7 @@
 //  Obstacle.swift
 //  SkiFreeiOS
 //
-//  Created by Lenel on 2/7/17.
+//  Created by ark9719 on 2/7/17.
 //  Copyright © 2017 ark9719. All rights reserved.
 //
 

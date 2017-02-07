@@ -2,7 +2,7 @@
 //  Skier.swift
 //  SkiFreeiOS
 //
-//  Created by Lenel on 1/31/17.
+//  Created by ark9719 on 1/31/17.
 //  Copyright © 2017 ark9719. All rights reserved.
 //
 
