@@ -19,7 +19,7 @@ class GameScene: SKScene {
     var skier = Skier()
     var distance = 0
     var distanceNode = SKLabelNode()
-    var currentObstacles = Array<SKSpriteNode>()
+    var currentObstacles = Array<Obstacle>()
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
@@ -102,18 +102,9 @@ class GameScene: SKScene {
         let spawnFrequency = 100.0 - Double(distance) * 0.01
         
         if distance > lastDistance + Int(spawnFrequency) {
+            
             if currentObstacles.count < 15 {
-                let colors = [ UIColor.yellow, UIColor.green, UIColor.blue ]
-                let randomColor = Int(arc4random_uniform(UInt32(3)))
-                
-                let newObstacle = SKSpriteNode()
-                newObstacle.size = CGSize(width: 35, height: 35)
-                newObstacle.color = colors[randomColor]
-                
-                let randomX = Int(arc4random_uniform(UInt32(frame.width)))
-                let randomY = Int(arc4random_uniform(UInt32(frame.height)))
-                newObstacle.position = CGPoint(x: randomX, y: -randomY )
-                
+                let newObstacle = Obstacle(frame: self.frame)
                 currentObstacles.append(newObstacle)
                 addChild(newObstacle)
                 lastDistance = distance
@@ -126,7 +117,7 @@ class GameScene: SKScene {
     func moveObstacles(){
         
         for obstacle in currentObstacles{
-            obstacle.position = CGPoint(x: obstacle.position.x, y: obstacle.position.y + 10)
+            obstacle.update()
             
             let indexObstacle = currentObstacles.index(of: obstacle)
             if obstacle.position.y > frame.height {

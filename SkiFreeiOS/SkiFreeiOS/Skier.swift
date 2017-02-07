@@ -41,14 +41,12 @@ class Skier: SKSpriteNode{
         switch direction{
             
         case "left":
-            self.skierPhysics?.applyImpulse(CGVector(dx: -30, dy: 0) , at: self.position)
-            //self.skierPhysics?.applyForce(CGVector(dx: -90, dy: 0), at: self.position)
+            self.skierPhysics?.applyImpulse(CGVector(dx: -20, dy: 0) , at: self.position)
             self.skierPhysics?.applyForce(CGVector(dx:0, dy: 250), at: self.position)
 
             break
         case "right":
-            self.skierPhysics?.applyImpulse(CGVector(dx: 30, dy: 0) , at: self.position)
-            //self.skierPhysics?.applyForce(CGVector(dx: 90, dy: 0), at: self.position)
+            self.skierPhysics?.applyImpulse(CGVector(dx: 20, dy: 0) , at: self.position)
             self.skierPhysics?.applyForce(CGVector(dx:0, dy: 250), at: self.position)
 
             break
