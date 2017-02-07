@@ -25,11 +25,10 @@ class Skier: SKSpriteNode{
     
     func setPhysics(){
         //Skier physics
-        
         skierPhysics = SKPhysicsBody(rectangleOf: size)
         skierPhysics?.allowsRotation = false
         skierPhysics?.angularDamping = 0
-        skierPhysics?.affectedByGravity = false
+        //skierPhysics?.affectedByGravity = false
         skierPhysics?.linearDamping = 0
         skierPhysics?.restitution = 0 //doesnt bounce :(
         skierPhysics?.friction = 0
@@ -37,22 +36,24 @@ class Skier: SKSpriteNode{
         
     }
     
-    func gravity(){
-        self.position = CGPoint(x: self.position.x, y: self.position.y - 10)
-    }
-    
-     
-    
-    func moveHorizontal(direction: String){
+    func move(direction: String){
         
         switch direction{
             
         case "left":
-            self.skierPhysics?.applyForce(CGVector(dx: -70, dy: 0), at: self.position)
+            self.skierPhysics?.applyImpulse(CGVector(dx: -30, dy: 0) , at: self.position)
+            //self.skierPhysics?.applyForce(CGVector(dx: -90, dy: 0), at: self.position)
+            self.skierPhysics?.applyForce(CGVector(dx:0, dy: 250), at: self.position)
+
             break
         case "right":
-            self.skierPhysics?.applyForce(CGVector(dx: 70, dy: 0), at: self.position)
+            self.skierPhysics?.applyImpulse(CGVector(dx: 30, dy: 0) , at: self.position)
+            //self.skierPhysics?.applyForce(CGVector(dx: 90, dy: 0), at: self.position)
+            self.skierPhysics?.applyForce(CGVector(dx:0, dy: 250), at: self.position)
+
             break
+        case "up":
+            self.skierPhysics?.applyForce(CGVector(dx:0, dy: 600), at: self.position)
         default:
             break
         }
