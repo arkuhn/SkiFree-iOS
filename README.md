@@ -17,7 +17,7 @@ and all in-app formatting is tailored for the iPhone 7. Cross-device support/sca
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md] file for details
 
 ## Acknowledgments
 
