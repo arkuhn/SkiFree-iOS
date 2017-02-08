@@ -1,7 +1,7 @@
 # SkiFree-iOS
 
-This is a port of one of my favorite childhood games, SkiFree. I played it on my parents computer a long time ago thanks to Microsoft Entertainment Pack.
-Now, I'm porting it to iOS to learn Swift and Spritekit development. 
+This is a port of one of my first childhood games, SkiFree. I played it on my parent's computer a *long* time ago.
+Now I'm porting it to iOS to learn Swift and Spritekit development. 
 
 ## Getting Started
 
