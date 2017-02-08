@@ -115,21 +115,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func moveBackground(){
         
-        if (background1.position.y <= -background1.size.height / 2){
-            background1.position = CGPoint(x: frame.width / 2, y: background2.position.y + frame.height)
+        if (background1.position.y >= 3 * frame.height / 2){
+            background1.position = CGPoint(x: frame.width / 2, y: background2.position.y - frame.height)
             return
         }
         
-        background1.position = CGPoint(x: Int(background1.position.x), y: Int(background1.position.y) - scrollSpeed)
+        background1.position = CGPoint(x: Int(background1.position.x), y: Int(background1.position.y) + scrollSpeed)
         
         
-        if (background2.position.y <= -background1.size.height / 2){
-            background2.position = CGPoint(x: frame.width / 2, y: background1.position.y + frame.height)
+        if (background2.position.y >= 3 * frame.height / 2){
+            background2.position = CGPoint(x: frame.width / 2, y: background1.position.y - frame.height)
             return
             
         }
         
-        background2.position = CGPoint(x: Int(background1.position.x), y: Int(background2.position.y) - scrollSpeed)
+        background2.position = CGPoint(x: Int(background1.position.x), y: Int(background2.position.y) + scrollSpeed)
         
         
     }
@@ -152,7 +152,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         background2.size = frame.size
         
         background1.position = CGPoint(x: frame.width / 2, y: frame.height / 2 )
-        background2.position = CGPoint(x: frame.width / 2, y: frame.height * 2 - frame.height/2)
+        background2.position = CGPoint(x: frame.width / 2, y: -frame.height / 2 )
         
         addChild(background1)
         addChild(background2)
@@ -170,7 +170,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         let gravityVec = vector_float3(0, -1, 0)
         let gravityNode = SKFieldNode.linearGravityField(withVector: gravityVec)
-        gravityNode.strength = 1.0
+        gravityNode.strength = 1.5
         addChild(gravityNode)
         
         //Confine Skier (Border physics)
