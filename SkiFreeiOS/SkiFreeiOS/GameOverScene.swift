@@ -13,6 +13,7 @@ class GameOverScene: SKScene{
     
     //Title
     var gameOver = SKLabelNode()
+    var highScore = SKLabelNode()
     
 
     
@@ -24,8 +25,16 @@ class GameOverScene: SKScene{
         gameOver.color = UIColor.blue
         gameOver.position = CGPoint(x: self.frame.width / 2, y: frame.height * 2 / 3 )
         
+        //High score
+        let points = UserDefaults.standard.object(forKey: "HighestScore") as! Int
+        highScore.text = ("High score: \(points)")
+        highScore.name = "highNode"
+        highScore.color = UIColor.blue
+        highScore.position = CGPoint(x: self.frame.width / 2, y: frame.height / 3)
+        
         
         self.addChild(gameOver)
+        self.addChild(highScore)
         
     }
     

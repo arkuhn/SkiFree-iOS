@@ -55,7 +55,7 @@ class Obstacle: SKSpriteNode{
     
     func getLocation(frameOriginal: CGRect){
         let randomX = Int(arc4random_uniform(UInt32(frameOriginal.width)))
-        let randomY = Int(arc4random_uniform(UInt32(frameOriginal.height)))
+        let randomY = Int(arc4random_uniform(UInt32(frameOriginal.height * 2)))
         self.position = CGPoint(x: randomX, y: -randomY )
     }
     

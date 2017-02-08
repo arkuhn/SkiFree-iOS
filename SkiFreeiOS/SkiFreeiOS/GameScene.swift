@@ -19,17 +19,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var touchZone = SKSpriteNode()
     var skier = Skier()
     var distanceNode = SKLabelNode()
+    var points = UserDefaults.standard.object(forKey: "HighestScore") as! Int
+
 
     //Obstacles
     var currentObstacles = Array<Obstacle>()
-    var obstacleMax = 15 //Total allowed obstacles on map
-    var distanceBetweenObstacles = 75 //How long between spawning obstacles
+    var obstacleMax = 10 //Total allowed obstacles on map
+    var distanceBetweenObstacles = 65 //How long between spawning obstacles
     
     
     var lastDistance = 0 //Last distance "seen" by
     var distance = 0 //Total distance traveled
     
-    var scrollSpeed = 6.0  //How fast terrain/objects pass
+    var scrollSpeed = 4.0  //How fast terrain/objects pass
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
@@ -43,7 +45,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         initDistanceLabel()
         
         //Skier
-        skier.position = CGPoint(x: frame.width / 2, y: frame.height - 40)
+        skier.position = CGPoint(x: frame.width / 2, y: frame.height / 2)
         addChild(skier)
     }
     
@@ -55,6 +57,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.distanceNode.text = ("Distance: \(distance)")
         self.updateObstacles()
         self.updateScrollDifficulty()
+        self.updateHighScore()
         
     }
     
@@ -89,6 +92,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     //UTILITY 
+    
+    func updateHighScore(){
+        if distance > points{
+            distanceNode.fontColor = UIColor.red
+            UserDefaults.standard.set(points, forKey: "HighestScore")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
     func updateObstacles(){
         
         //For every 1000 distance
@@ -106,10 +118,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func spawnObstacles(){
     
         if distance - lastDistance >= distanceBetweenObstacles{
-            let newObstacle = Obstacle(frame: self.frame)
-            currentObstacles.append(newObstacle)
-            addChild(newObstacle)
-            lastDistance = distance
+                while currentObstacles.count < obstacleMax{
+                    let newObstacle = Obstacle(frame: self.frame)
+                    currentObstacles.append(newObstacle)
+                    addChild(newObstacle)
+                    lastDistance = distance
+                }
         }
         
     }
