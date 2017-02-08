@@ -12,6 +12,14 @@ import SpriteKit
 
 class Obstacle: SKSpriteNode{
     
+    let textureArray: [SKTexture] = [SKTexture(imageNamed: "skifreetree"),
+                                     SKTexture(imageNamed: "skifreetree2"),
+                                     SKTexture(imageNamed: "skifreetree3"),
+                                     SKTexture(imageNamed: "skifreetree4"),
+                                     SKTexture(imageNamed: "skifreestump"),
+                                     SKTexture(imageNamed: "skifreemushroom"),
+                                     SKTexture(imageNamed: "skifreerock") ]
+    
     
     init (frame: CGRect) {
         super.init(texture: nil, color: UIColor.clear, size: CGSize(width: 40, height: 40))
@@ -27,7 +35,7 @@ class Obstacle: SKSpriteNode{
     }
     
     func initPhysics(){
-        self.physicsBody = SKPhysicsBody(rectangleOf: self.size)
+        self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.texture!.size())
         self.physicsBody?.isDynamic = false
         self.physicsBody?.collisionBitMask = 0
         self.physicsBody?.contactTestBitMask = 2
@@ -35,10 +43,8 @@ class Obstacle: SKSpriteNode{
     }
     
     func getTexture(){
-        //Colors until sprites are a thing
-        let colors = [ UIColor.yellow, UIColor.green, UIColor.blue ]
-        let randomColor = Int(arc4random_uniform(UInt32(3)))
-        self.color = colors[randomColor]
+        let randomTexture = Int(arc4random_uniform(UInt32(textureArray.count)))
+        self.texture = textureArray[randomTexture]
         
     }
     

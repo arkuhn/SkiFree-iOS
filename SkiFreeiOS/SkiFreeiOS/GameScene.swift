@@ -170,7 +170,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         let gravityVec = vector_float3(0, -1, 0)
         let gravityNode = SKFieldNode.linearGravityField(withVector: gravityVec)
-        gravityNode.strength = 2.5
+        gravityNode.strength = 1.0
         addChild(gravityNode)
         
         //Confine Skier (Border physics)
