@@ -18,11 +18,20 @@ class Obstacle: SKSpriteNode{
         getTexture()
         getSize()
         getLocation(frameOriginal: frame)
+        initPhysics()
         
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func initPhysics(){
+        self.physicsBody = SKPhysicsBody(rectangleOf: self.size)
+        self.physicsBody?.isDynamic = false
+        self.physicsBody?.collisionBitMask = 0
+        self.physicsBody?.contactTestBitMask = 2
+        
     }
     
     func getTexture(){

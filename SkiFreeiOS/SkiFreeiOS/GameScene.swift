@@ -10,7 +10,7 @@ import SpriteKit
 import UIKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var background1 = SKSpriteNode()
     var background2 = SKSpriteNode()
@@ -25,6 +25,7 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
+        self.physicsWorld.contactDelegate = self
         anchorPoint = CGPoint(x: 0, y: 0)
         
         initBackgrounds()
@@ -35,8 +36,6 @@ class GameScene: SKScene {
         //Skier
         skier.position = CGPoint(x: frame.width / 2, y: frame.height - 40)
         addChild(skier)
-      
-    
     }
     
     //SCENE
@@ -48,6 +47,11 @@ class GameScene: SKScene {
         self.updateObstacles()
         self.updateScrollDifficulty()
         
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        let overScene = GameOverScene(size: self.size)
+        self.view?.presentScene(overScene, transition: SKTransition.fade(withDuration: 1))
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -132,7 +136,7 @@ class GameScene: SKScene {
     
     func updateScrollDifficulty(){
         if (distance % 1000 == 0){
-            let advancement = distance / 300
+            let advancement = distance / 1000
             scrollSpeed += advancement
         }
         
