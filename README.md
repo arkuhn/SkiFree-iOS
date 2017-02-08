@@ -15,6 +15,11 @@ and all in-app formatting is tailored for the iPhone 7. Cross-device support/sca
 * [Spritekit]
 * [iOS 10.1]
 
+## TODO
+* Add the yeti!
+* Prevent obstacle overlapping
+* Highscore mechanism 
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md] file for details
