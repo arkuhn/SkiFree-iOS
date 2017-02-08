@@ -15,7 +15,9 @@ class Skier: SKSpriteNode{
     var skierPhysics: SKPhysicsBody?
     
     init () {
-        super.init(texture: nil, color: UIColor.red, size: CGSize(width: 40, height: 40))
+        let texture = SKTexture(imageNamed: "skiforward")
+        super.init(texture: texture, color: UIColor.clear, size: texture.size())
+        //super.init(texture: nil, color: UIColor.red, size: CGSize(width: 40, height: 40))
         setPhysics()
     }
     
@@ -43,17 +45,17 @@ class Skier: SKSpriteNode{
         switch direction{
             
         case "left":
-            self.skierPhysics?.applyImpulse(CGVector(dx: -20, dy: 0) , at: self.position)
-            self.skierPhysics?.applyForce(CGVector(dx:0, dy: 250), at: self.position)
+            self.skierPhysics?.applyImpulse(CGVector(dx: -5, dy: 0) , at: self.position)
+            self.skierPhysics?.applyForce(CGVector(dx:0, dy: 50), at: self.position)
 
             break
         case "right":
-            self.skierPhysics?.applyImpulse(CGVector(dx: 20, dy: 0) , at: self.position)
-            self.skierPhysics?.applyForce(CGVector(dx:0, dy: 250), at: self.position)
+            self.skierPhysics?.applyImpulse(CGVector(dx: 5, dy: 0) , at: self.position)
+            self.skierPhysics?.applyForce(CGVector(dx:0, dy: 50), at: self.position)
 
             break
         case "up":
-            self.skierPhysics?.applyForce(CGVector(dx:0, dy: 600), at: self.position)
+            self.skierPhysics?.applyForce(CGVector(dx:0, dy: 200), at: self.position)
         default:
             break
         }
