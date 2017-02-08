@@ -12,6 +12,7 @@ import SpriteKit
 
 class Obstacle: SKSpriteNode{
     
+    
     init (frame: CGRect) {
         super.init(texture: nil, color: UIColor.clear, size: CGSize(width: 40, height: 40))
         getTexture()
@@ -43,8 +44,8 @@ class Obstacle: SKSpriteNode{
         self.position = CGPoint(x: randomX, y: -randomY )
     }
     
-    func update(){
-        self.position = CGPoint(x: self.position.x, y: self.position.y + 10)
+    func update(scrollSpeed: Int){
+        self.position = CGPoint(x: self.position.x, y: self.position.y + CGFloat(scrollSpeed))
 
     }
     

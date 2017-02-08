@@ -20,6 +20,7 @@ class GameScene: SKScene {
     var distance = 0
     var distanceNode = SKLabelNode()
     var currentObstacles = Array<Obstacle>()
+    var scrollSpeed = 6
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
@@ -45,7 +46,7 @@ class GameScene: SKScene {
         self.distance += 1
         self.distanceNode.text = ("Distance: \(distance)")
         self.updateObstacles()
-        //skier.gravity()
+        self.updateScrollDifficulty()
         
     }
     
@@ -71,26 +72,6 @@ class GameScene: SKScene {
         }
     }
     
-    func moveBackground(){
-        
-        if (background1.position.y <= -background1.size.height / 2){
-            background1.position = CGPoint(x: frame.width / 2, y: background2.position.y + frame.height)
-            return
-        }
-        
-        background1.position = CGPoint(x: background1.position.x, y: background1.position.y - 6)
-        
-        
-        if (background2.position.y <= -background1.size.height / 2){
-            background2.position = CGPoint(x: frame.width / 2, y: background1.position.y + frame.height)
-            return
-            
-        }
-        
-        background2.position = CGPoint(x: background1.position.x, y: background2.position.y - 6)
-
-        
-    }
     
     //UTILITY 
     func updateObstacles(){
@@ -117,7 +98,7 @@ class GameScene: SKScene {
     func moveObstacles(){
         
         for obstacle in currentObstacles{
-            obstacle.update()
+            obstacle.update(scrollSpeed: scrollSpeed)
             
             let indexObstacle = currentObstacles.index(of: obstacle)
             if obstacle.position.y > frame.height {
@@ -126,8 +107,34 @@ class GameScene: SKScene {
             }
         }
         
+    }
+    
+    func moveBackground(){
+        
+        if (background1.position.y <= -background1.size.height / 2){
+            background1.position = CGPoint(x: frame.width / 2, y: background2.position.y + frame.height)
+            return
+        }
+        
+        background1.position = CGPoint(x: Int(background1.position.x), y: Int(background1.position.y) - scrollSpeed)
         
         
+        if (background2.position.y <= -background1.size.height / 2){
+            background2.position = CGPoint(x: frame.width / 2, y: background1.position.y + frame.height)
+            return
+            
+        }
+        
+        background2.position = CGPoint(x: Int(background1.position.x), y: Int(background2.position.y) - scrollSpeed)
+        
+        
+    }
+    
+    func updateScrollDifficulty(){
+        if (distance % 1000 == 0){
+            let advancement = distance / 300
+            scrollSpeed += advancement
+        }
         
     }
     

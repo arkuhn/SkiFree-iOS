@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D4D204A1E4A1BD300B42648 /* Obstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4D20491E4A1BD300B42648 /* Obstacle.swift */; };
+		0D4D204C1E4A75FA00B42648 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4D204B1E4A75FA00B42648 /* GameOverScene.swift */; };
 		0DBFEFC11E410D10003F6772 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFEFC01E410D10003F6772 /* AppDelegate.swift */; };
 		0DBFEFC71E410D10003F6772 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFEFC61E410D10003F6772 /* GameScene.swift */; };
 		0DBFEFC91E410D10003F6772 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFEFC81E410D10003F6772 /* GameViewController.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		0D4D20491E4A1BD300B42648 /* Obstacle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Obstacle.swift; sourceTree = "<group>"; };
+		0D4D204B1E4A75FA00B42648 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		0DBFEFBD1E410D10003F6772 /* SkiFreeiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkiFreeiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DBFEFC01E410D10003F6772 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DBFEFC61E410D10003F6772 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				0DBFEFCF1E410D10003F6772 /* LaunchScreen.storyboard */,
 				0DBFEFD21E410D10003F6772 /* Info.plist */,
 				0DBFEFF41E411EFA003F6772 /* MenuScene.swift */,
+				0D4D204B1E4A75FA00B42648 /* GameOverScene.swift */,
 			);
 			path = SkiFreeiOS;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			files = (
 				0DBFEFC71E410D10003F6772 /* GameScene.swift in Sources */,
 				0DBFEFC91E410D10003F6772 /* GameViewController.swift in Sources */,
+				0D4D204C1E4A75FA00B42648 /* GameOverScene.swift in Sources */,
 				0D4D204A1E4A1BD300B42648 /* Obstacle.swift in Sources */,
 				0DBFEFC11E410D10003F6772 /* AppDelegate.swift in Sources */,
 				0DBFEFF71E412B4B003F6772 /* Skier.swift in Sources */,
