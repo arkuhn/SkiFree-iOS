@@ -18,7 +18,6 @@ and all in-app formatting is tailored for the iPhone 7. Cross-device support/sca
 ## TODO
 * Add the yeti!
 * Prevent obstacle overlapping
-* Highscore mechanism 
 * Transparent sprites for more accurate collision
 
 ## License
