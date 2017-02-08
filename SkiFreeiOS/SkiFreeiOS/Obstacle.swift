@@ -50,7 +50,7 @@ class Obstacle: SKSpriteNode{
     
     func getSize(){
         //static for now
-        self.size = CGSize(width: 30, height: 30)
+        self.size = (self.texture?.size())!
     }
     
     func getLocation(frameOriginal: CGRect){
@@ -59,7 +59,7 @@ class Obstacle: SKSpriteNode{
         self.position = CGPoint(x: randomX, y: -randomY )
     }
     
-    func update(scrollSpeed: Int){
+    func update(scrollSpeed: Double){
         self.position = CGPoint(x: self.position.x, y: self.position.y + CGFloat(scrollSpeed))
 
     }

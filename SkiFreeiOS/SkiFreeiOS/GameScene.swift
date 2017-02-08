@@ -12,15 +12,24 @@ import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    
+    //World
     var background1 = SKSpriteNode()
     var background2 = SKSpriteNode()
     var touchZone = SKSpriteNode()
-    var lastDistance = 0
     var skier = Skier()
-    var distance = 0
     var distanceNode = SKLabelNode()
+
+    //Obstacles
     var currentObstacles = Array<Obstacle>()
-    var scrollSpeed = 6
+    var obstacleMax = 15 //Total allowed obstacles on map
+    var distanceBetweenObstacles = 75 //How long between spawning obstacles
+    
+    
+    var lastDistance = 0 //Last distance "seen" by
+    var distance = 0 //Total distance traveled
+    
+    var scrollSpeed = 6.0  //How fast terrain/objects pass
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
@@ -50,8 +59,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
+        skier.texture = SKTexture(imageNamed: "skifreehit")
         let overScene = GameOverScene(size: self.size)
-        self.view?.presentScene(overScene, transition: SKTransition.fade(withDuration: 1))
+        self.view?.presentScene(overScene, transition: SKTransition.fade(withDuration: 2))
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -79,22 +89,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //UTILITY 
     func updateObstacles(){
+        
+        //For every 1000 distance
+        // - increase total possible obstacles by 2
+        // - decrease distance neccessary to spawn more obstacles
+        if (distance % 1000 == 0){
+            obstacleMax += 2
+            distanceBetweenObstacles -= 5
+        }
+        
         spawnObstacles()
         moveObstacles()
     }
     
     func spawnObstacles(){
-        let spawnFrequency = 100.0 - Double(distance) * 0.01
-        
-        if distance > lastDistance + Int(spawnFrequency) {
-            
-            if currentObstacles.count < 15 {
-                let newObstacle = Obstacle(frame: self.frame)
-                currentObstacles.append(newObstacle)
-                addChild(newObstacle)
-                lastDistance = distance
-            }
-            
+    
+        if distance - lastDistance >= distanceBetweenObstacles{
+            let newObstacle = Obstacle(frame: self.frame)
+            currentObstacles.append(newObstacle)
+            addChild(newObstacle)
+            lastDistance = distance
         }
         
     }
@@ -120,7 +134,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             return
         }
         
-        background1.position = CGPoint(x: Int(background1.position.x), y: Int(background1.position.y) + scrollSpeed)
+        background1.position = CGPoint(x: Double(background1.position.x), y: Double(background1.position.y) + scrollSpeed)
         
         
         if (background2.position.y >= 3 * frame.height / 2){
@@ -129,15 +143,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
-        background2.position = CGPoint(x: Int(background1.position.x), y: Int(background2.position.y) + scrollSpeed)
+        background2.position = CGPoint(x: Double(background1.position.x), y: Double(background2.position.y) + scrollSpeed)
         
         
     }
     
     func updateScrollDifficulty(){
         if (distance % 1000 == 0){
-            let advancement = distance / 1000
-            scrollSpeed += advancement
+            let advancement = Double(distance / 1000)
+            scrollSpeed += (advancement / 2.0)
         }
         
     }
