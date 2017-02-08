@@ -174,8 +174,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func initTouchZone(){
         //TouchZone
-        touchZone = SKSpriteNode(color: UIColor.clear, size: CGSize(width: frame.width, height: frame.height / 6))
-        touchZone.position = CGPoint(x: frame.width / 2 , y: frame.height / 11)
+        touchZone = SKSpriteNode(color: UIColor.clear, size: CGSize(width: frame.width, height: frame.height / 5))
+        touchZone.position = CGPoint(x: frame.width / 2 , y: frame.height / 5 - touchZone.size.height/2)
         addChild(touchZone)
     }
     
