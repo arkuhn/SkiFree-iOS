@@ -66,21 +66,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        
         for touch in touches{
             let pos = touch.location(in: self)
             let node = self.atPoint(pos)
             
             if node == touchZone {
-
-            if(pos.x < frame.width / 3 ){
-                skier.move(direction: "left")
-            }
-            else if(pos.x > frame.width / 3 && pos.x < 2 * frame.width / 3){
-                skier.move(direction: "up")
-            }
-            else if(pos.x > 2 * frame.width / 3){
-                skier.move(direction: "right")
-            }
+                
+                if(pos.x < frame.width / 3 ){
+                    skier.move(direction: "left")
+                }
+                else if(pos.x > frame.width / 3 && pos.x < 2 * frame.width / 3){
+                    skier.move(direction: "down")
+                }
+                else if(pos.x > 2 * frame.width / 3){
+                    skier.move(direction: "right")
+                }
                 
             }
         }
@@ -182,7 +183,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func initWorldPhysics(){
         //Gravity
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
-        let gravityVec = vector_float3(0, -1, 0)
+        let gravityVec = vector_float3(0, 1, 0)
         let gravityNode = SKFieldNode.linearGravityField(withVector: gravityVec)
         gravityNode.strength = 1.5
         addChild(gravityNode)

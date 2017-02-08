@@ -52,9 +52,9 @@ class Skier: SKSpriteNode{
             self.texture = SKTexture(imageNamed: "skiright")
             self.skierPhysics?.applyImpulse(CGVector(dx: 5, dy: 0) , at: self.position)
             break
-        case "up":
+        case "down":
             self.texture = SKTexture(imageNamed: "skiforward")
-            self.skierPhysics?.applyForce(CGVector(dx:0, dy: 200), at: self.position)
+            self.skierPhysics?.applyForce(CGVector(dx:0, dy: -200), at: self.position)
         default:
             break
         }
