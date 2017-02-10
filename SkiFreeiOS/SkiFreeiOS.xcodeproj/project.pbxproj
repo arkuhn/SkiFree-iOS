@@ -19,6 +19,7 @@
 		0DBFEFE71E410D10003F6772 /* SkiFreeiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFEFE61E410D10003F6772 /* SkiFreeiOSUITests.swift */; };
 		0DBFEFF51E411EFA003F6772 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFEFF41E411EFA003F6772 /* MenuScene.swift */; };
 		0DBFEFF71E412B4B003F6772 /* Skier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFEFF61E412B4B003F6772 /* Skier.swift */; };
+		0DF0739E1E4DFEF00006EB52 /* HelpScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF0739D1E4DFEF00006EB52 /* HelpScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		0DBFEFE81E410D10003F6772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DBFEFF41E411EFA003F6772 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		0DBFEFF61E412B4B003F6772 /* Skier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skier.swift; sourceTree = "<group>"; };
+		0DF0739D1E4DFEF00006EB52 /* HelpScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +109,8 @@
 		0DBFEFBF1E410D10003F6772 /* SkiFreeiOS */ = {
 			isa = PBXGroup;
 			children = (
+				0DF0739F1E4E00190006EB52 /* Scenes */,
 				0DBFEFC01E410D10003F6772 /* AppDelegate.swift */,
-				0DBFEFC61E410D10003F6772 /* GameScene.swift */,
 				0DBFEFF61E412B4B003F6772 /* Skier.swift */,
 				0D4D20491E4A1BD300B42648 /* Obstacle.swift */,
 				0DBFEFC81E410D10003F6772 /* GameViewController.swift */,
@@ -116,8 +118,6 @@
 				0DBFEFCD1E410D10003F6772 /* Assets.xcassets */,
 				0DBFEFCF1E410D10003F6772 /* LaunchScreen.storyboard */,
 				0DBFEFD21E410D10003F6772 /* Info.plist */,
-				0DBFEFF41E411EFA003F6772 /* MenuScene.swift */,
-				0D4D204B1E4A75FA00B42648 /* GameOverScene.swift */,
 			);
 			path = SkiFreeiOS;
 			sourceTree = "<group>";
@@ -138,6 +138,17 @@
 				0DBFEFE81E410D10003F6772 /* Info.plist */,
 			);
 			path = SkiFreeiOSUITests;
+			sourceTree = "<group>";
+		};
+		0DF0739F1E4E00190006EB52 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0D4D204B1E4A75FA00B42648 /* GameOverScene.swift */,
+				0DF0739D1E4DFEF00006EB52 /* HelpScene.swift */,
+				0DBFEFC61E410D10003F6772 /* GameScene.swift */,
+				0DBFEFF41E411EFA003F6772 /* MenuScene.swift */,
+			);
+			name = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DBFEFC71E410D10003F6772 /* GameScene.swift in Sources */,
+				0DF0739E1E4DFEF00006EB52 /* HelpScene.swift in Sources */,
 				0DBFEFC91E410D10003F6772 /* GameViewController.swift in Sources */,
 				0D4D204C1E4A75FA00B42648 /* GameOverScene.swift in Sources */,
 				0D4D204A1E4A1BD300B42648 /* Obstacle.swift in Sources */,

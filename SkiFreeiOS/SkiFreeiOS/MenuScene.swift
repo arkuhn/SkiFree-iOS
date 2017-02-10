@@ -17,6 +17,9 @@ class MenuScene: SKScene{
     //Play button
     var playButton = SKLabelNode()
     
+    //Help menu
+    var helpButton = SKLabelNode()
+    
     override func didMove(to view: SKView) {
         
         //Title
@@ -31,8 +34,15 @@ class MenuScene: SKScene{
         playButton.color = UIColor.blue
         playButton.position = CGPoint(x: self.frame.width / 2, y: frame.height / 3)
         
+        //How to
+        helpButton.text = "help"
+        helpButton.name = "helpNode"
+        helpButton.color = UIColor.blue
+        helpButton.position = CGPoint(x: playButton.position.x, y: frame.height / 3 - 70)
+        
         self.addChild(gameTitleLabel)
         self.addChild(playButton)
+        self.addChild(helpButton)
 
     }
     
@@ -51,6 +61,11 @@ class MenuScene: SKScene{
                 let playScene = GameScene(size: self.size)
                 self.view?.presentScene(playScene, transition: SKTransition.fade(withDuration: 1))
                 
+            }
+            
+            if node == helpButton{
+                let helpScene = HelpScene(size: self.size)
+                self.view?.presentScene(helpScene, transition: SKTransition.fade(withDuration: 1))
             }
             
             
