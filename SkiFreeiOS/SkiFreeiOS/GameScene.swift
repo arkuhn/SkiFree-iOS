@@ -96,7 +96,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func updateHighScore(){
         if distance > points{
             distanceNode.fontColor = UIColor.red
-            UserDefaults.standard.set(points, forKey: "HighestScore")
+            UserDefaults.standard.set(distance, forKey: "HighestScore")
             UserDefaults.standard.synchronize()
         }
     }
@@ -166,7 +166,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func updateScrollDifficulty(){
         if (distance % 1000 == 0){
             let advancement = Double(distance / 1000)
-            scrollSpeed += (advancement / 2.0)
+            scrollSpeed += (advancement / 1.5)
         }
         
     }
@@ -189,8 +189,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func initTouchZone(){
         //TouchZone
-        touchZone = SKSpriteNode(color: UIColor.clear, size: CGSize(width: frame.width, height: frame.height / 5))
-        touchZone.position = CGPoint(x: frame.width / 2 , y: frame.height / 5 - touchZone.size.height/2)
+        touchZone = SKSpriteNode(color: UIColor.clear, size: CGSize(width: frame.width, height: frame.height / 2))
+        touchZone.position = CGPoint(x: frame.width / 2 , y: frame.height / 2 - touchZone.size.height/2)
         addChild(touchZone)
     }
     

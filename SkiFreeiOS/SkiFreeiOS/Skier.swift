@@ -46,15 +46,15 @@ class Skier: SKSpriteNode{
             
         case "left":
             self.texture = SKTexture(imageNamed: "skileft")
-            self.skierPhysics?.applyImpulse(CGVector(dx: -5, dy: 0) , at: self.position)
+            self.skierPhysics?.applyImpulse(CGVector(dx: -4, dy: 0) , at: self.position)
             break
         case "right":
             self.texture = SKTexture(imageNamed: "skiright")
-            self.skierPhysics?.applyImpulse(CGVector(dx: 5, dy: 0) , at: self.position)
+            self.skierPhysics?.applyImpulse(CGVector(dx: 4, dy: 0) , at: self.position)
             break
         case "down":
             self.texture = SKTexture(imageNamed: "skiforward")
-            self.skierPhysics?.applyForce(CGVector(dx:0, dy: -200), at: self.position)
+            self.skierPhysics?.applyForce(CGVector(dx:0, dy: -250), at: self.position)
         default:
             break
         }
